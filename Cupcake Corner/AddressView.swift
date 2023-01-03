@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct AddressView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var order: SharedOrder
     var body: some View {
-        NavigationView {
             Form {
                 Section {
                     TextField("Name", text: $order.name)
@@ -31,10 +30,10 @@ struct AddressView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-}
+
 
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
-        AddressView(order: Order())
+        AddressView(order: SharedOrder())
     }
 }
